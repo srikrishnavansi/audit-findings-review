@@ -1,0 +1,15 @@
+{
+  "about": "SYNTHETIC audit notes, written in auditor shorthand for this demo. No real company, system, person or incident.",
+  "notes": [
+    {"id": "N01", "synthetic": true, "text": "CRM, customer master data. Sample n=40 churned customers\n- RetSched v2: delete 24 mo after contract end\n- 31/40 > 5 yrs old, full contact history still there\n- no automated purge, IT: manual cleanup 'planned'"},
+    {"id": "N02", "synthetic": true, "text": "WH video analytics (go-live 03/2026)\n- cams measure picking speed per employee, shift leads see dashboards\n- face blur OFF by default\n- no DPIA on file, DPO not involved pre go-live"},
+    {"id": "N03", "synthetic": true, "text": "Payroll outsourced (ext. provider, since 2019)\n- employee bank details + salary data\n- only 2019 MSA on file, no Art. 28 clauses, no signed DPA\n- procurement: 'DPA in progress' (8 months)"},
+    {"id": "N04", "synthetic": true, "text": "HR system incl. sick-leave data\n- no audit trail for admin actions since migration (01/2026)\n- 3 shared admin accts (hradmin1-3), no MFA\n- last access recert. Q2/2025"},
+    {"id": "N05", "synthetic": true, "text": "INC-0412, misdirected mail\n- 14.05.: invoices for 212 customers (name, address, amount) sent to wrong distribution list\n- detected same day (service desk)\n- SA notified 22.05., no reason for delay on file\n- entry in breach register: yes"},
+    {"id": "N06", "synthetic": true, "text": "RoPA\n- 37 activities, last review 06/2026\n- retention period missing for 2 (newsletter, applicant pool)\n- owner for update already assigned"},
+    {"id": "N07", "synthetic": true, "text": "Ticketing SaaS (support)\n- customer names, emails, order history, hosting US\n- vendor file: no SCCs, no TIA\n- vendor not on EU-US DPF list (checked 09/2026)"},
+    {"id": "N08", "synthetic": true, "text": "Newsletter (~18k subscribers)\n- unsubscribe = login + 3 steps\n- consent proof only as monthly aggregate counts, no per-subscriber timestamp/source\n- DOI active"},
+    {"id": "N09", "synthetic": true, "text": "DSAR log 2026 (privacy team)\n- 11 received, 3 answered after 6-9 wks\n- no extension notice to requesters\n- no deadline tracking in tool"},
+    {"id": "N10", "synthetic": true, "text": "Erasure requests (CRM + marketing DWH)\n- CRM deletion done within ~1 week\n- same customers still in marketing DWH + nightly backups restored to test env\n- no suppression list against re-import"}
+  ]
+}

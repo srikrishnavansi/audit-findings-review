@@ -1,0 +1,7 @@
+# Python 3.10+. Versions are the ones the tests ran on.
+fastapi==0.143.0
+uvicorn==0.54.0
+langgraph==1.2.14
+anthropic==1.13.0   # only used when ANTHROPIC_API_KEY is set
+httpx==0.28.1       # FastAPI TestClient
+pytest==9.1.1

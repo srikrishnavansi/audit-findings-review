@@ -1,0 +1,405 @@
+{
+ "mode": "rules (offline, deterministic)",
+ "findings": [
+  {
+   "id": "N01",
+   "note": "CRM, customer master data. Sample n=40 churned customers\n- RetSched v2: delete 24 mo after contract end\n- 31/40 > 5 yrs old, full contact history still there\n- no automated purge, IT: manual cleanup 'planned'",
+   "candidates": [
+    [
+     "Art. 5(1)(e)",
+     4.81
+    ],
+    [
+     "Art. 28(3)",
+     3.11
+    ],
+    [
+     "Art. 33",
+     2.5
+    ]
+   ],
+   "draft": {
+    "title": "Storage limitation: CRM, customer master data. Sample n=40 churned customers",
+    "article": "Art. 5(1)(e)",
+    "risk": "medium",
+    "evidence": "RetSched v2: delete 24 mo after contract end; 31/40 > 5 yrs old, full contact history still there; no automated purge, IT: manual cleanup 'planned'",
+    "recommendation": "System owner to configure automated deletion or anonymisation against the retention schedule and evidence the first run before the follow-up audit."
+   },
+   "judge": {
+    "citation": {
+     "ok": true,
+     "why": "note mentions: delete, purge"
+    },
+    "actionable": {
+     "ok": true,
+     "why": "names owner, action and timeframe"
+    },
+    "faithful": {
+     "ok": true,
+     "why": "every figure and name traces to the note"
+    }
+   },
+   "flags": []
+  },
+  {
+   "id": "N02",
+   "note": "WH video analytics (go-live 03/2026)\n- cams measure picking speed per employee, shift leads see dashboards\n- face blur OFF by default\n- no DPIA on file, DPO not involved pre go-live",
+   "candidates": [
+    [
+     "Art. 35",
+     6.64
+    ],
+    [
+     "Art. 25(2)",
+     6.05
+    ],
+    [
+     "Art. 32",
+     2.52
+    ]
+   ],
+   "draft": {
+    "title": "Data protection impact assessment: WH video analytics (go-live 03/2026)",
+    "article": "Art. 35",
+    "risk": "high",
+    "evidence": "cams measure picking speed per employee, shift leads see dashboards; face blur OFF by default; no DPIA on file, DPO not involved pre go-live",
+    "recommendation": "DPO to complete a DPIA for the processing, apply the resulting measures and consult the supervisory authority if high risk remains, before the follow-up audit."
+   },
+   "judge": {
+    "citation": {
+     "ok": true,
+     "why": "note mentions: dpia, video"
+    },
+    "actionable": {
+     "ok": true,
+     "why": "names owner, action and timeframe"
+    },
+    "faithful": {
+     "ok": true,
+     "why": "every figure and name traces to the note"
+    }
+   },
+   "flags": []
+  },
+  {
+   "id": "N03",
+   "note": "Payroll outsourced (ext. provider, since 2019)\n- employee bank details + salary data\n- only 2019 MSA on file, no Art. 28 clauses, no signed DPA\n- procurement: 'DPA in progress' (8 months)",
+   "candidates": [
+    [
+     "Art. 28(3)",
+     13.36
+    ],
+    [
+     "Art. 12(3)",
+     3.14
+    ],
+    [
+     "Art. 5(1)(e)",
+     2.34
+    ]
+   ],
+   "draft": {
+    "title": "Processor contract: Payroll outsourced (ext. provider, since 2019)",
+    "article": "Art. 28(3)",
+    "risk": "high",
+    "evidence": "employee bank details + salary data; only 2019 MSA on file, no Art. 28 clauses, no signed DPA; procurement: 'DPA in progress' (8 months)",
+    "recommendation": "Procurement to sign a data processing agreement covering the Article 28 terms with the processor before the follow-up audit."
+   },
+   "judge": {
+    "citation": {
+     "ok": true,
+     "why": "note mentions: dpa, outsourc, provider"
+    },
+    "actionable": {
+     "ok": true,
+     "why": "names owner, action and timeframe"
+    },
+    "faithful": {
+     "ok": true,
+     "why": "every figure and name traces to the note"
+    }
+   },
+   "flags": []
+  },
+  {
+   "id": "N04",
+   "note": "HR system incl. sick-leave data\n- no audit trail for admin actions since migration (01/2026)\n- 3 shared admin accts (hradmin1-3), no MFA\n- last access recert. Q2/2025",
+   "candidates": [
+    [
+     "Art. 32",
+     8.8
+    ],
+    [
+     "Art. 15",
+     3.52
+    ],
+    [
+     "Art. 12(3)",
+     2.54
+    ]
+   ],
+   "draft": {
+    "title": "Security of processing: HR system incl. sick-leave data",
+    "article": "Art. 32",
+    "risk": "high",
+    "evidence": "no audit trail for admin actions since migration (01/2026); 3 shared admin accts (hradmin1-3), no MFA; last access recert. Q2/2025",
+    "recommendation": "IT security to implement and evidence the missing technical control (logging, access control or encryption) for the affected system before the follow-up audit."
+   },
+   "judge": {
+    "citation": {
+     "ok": true,
+     "why": "note mentions: admin, mfa"
+    },
+    "actionable": {
+     "ok": true,
+     "why": "names owner, action and timeframe"
+    },
+    "faithful": {
+     "ok": true,
+     "why": "every figure and name traces to the note"
+    }
+   },
+   "flags": []
+  },
+  {
+   "id": "N05",
+   "note": "INC-0412, misdirected mail\n- 14.05.: invoices for 212 customers (name, address, amount) sent to wrong distribution list\n- detected same day (service desk)\n- SA notified 22.05., no reason for delay on file\n- entry in breach register: yes",
+   "candidates": [
+    [
+     "Art. 33",
+     14.3
+    ],
+    [
+     "Art. 30",
+     2.8
+    ],
+    [
+     "Art. 17",
+     2.08
+    ]
+   ],
+   "draft": {
+    "title": "Notification of a personal data breach to the supervisory authority: INC-0412, misdirected mail",
+    "article": "Art. 33",
+    "risk": "high",
+    "evidence": "14.05.: invoices for 212 customers (name, address, amount) sent to wrong distribution list; detected same day (service desk); SA notified 22.05., no reason for delay on file; entry in breach register: yes",
+    "recommendation": "DPO to fix the breach procedure so the authority is notified within 72 hours, with reasons for any delay documented, before the follow-up audit."
+   },
+   "judge": {
+    "citation": {
+     "ok": true,
+     "why": "note mentions: breach, notif"
+    },
+    "actionable": {
+     "ok": true,
+     "why": "names owner, action and timeframe"
+    },
+    "faithful": {
+     "ok": true,
+     "why": "every figure and name traces to the note"
+    }
+   },
+   "flags": []
+  },
+  {
+   "id": "N06",
+   "note": "RoPA\n- 37 activities, last review 06/2026\n- retention period missing for 2 (newsletter, applicant pool)\n- owner for update already assigned",
+   "candidates": [
+    [
+     "Art. 30",
+     5.97
+    ],
+    [
+     "Art. 5(1)(e)",
+     4.41
+    ],
+    [
+     "Art. 7",
+     2.42
+    ]
+   ],
+   "draft": {
+    "title": "Records of processing activities: RoPA",
+    "article": "Art. 30",
+    "risk": "low",
+    "evidence": "37 activities, last review 06/2026; retention period missing for 2 (newsletter, applicant pool); owner for update already assigned",
+    "recommendation": "DPO to complete the missing entries in the record of processing activities and set a review cycle before the follow-up audit."
+   },
+   "judge": {
+    "citation": {
+     "ok": true,
+     "why": "note mentions: ropa"
+    },
+    "actionable": {
+     "ok": true,
+     "why": "names owner, action and timeframe"
+    },
+    "faithful": {
+     "ok": true,
+     "why": "every figure and name traces to the note"
+    }
+   },
+   "flags": []
+  },
+  {
+   "id": "N07",
+   "note": "Ticketing SaaS (support)\n- customer names, emails, order history, hosting US\n- vendor file: no SCCs, no TIA\n- vendor not on EU-US DPF list (checked 09/2026)",
+   "candidates": [
+    [
+     "Art. 46",
+     7.53
+    ],
+    [
+     "Art. 28(3)",
+     2.17
+    ],
+    [
+     "Art. 5(1)(e)",
+     0
+    ]
+   ],
+   "draft": {
+    "title": "Transfers subject to appropriate safeguards: Ticketing SaaS (support)",
+    "article": "Art. 46",
+    "risk": "high",
+    "evidence": "customer names, emails, order history, hosting US; vendor file: no SCCs, no TIA; vendor not on EU-US DPF list (checked 09/2026)",
+    "recommendation": "Legal to put appropriate safeguards (standard contractual clauses plus a transfer impact assessment) in place for the transfer, or stop it, before the follow-up audit."
+   },
+   "judge": {
+    "citation": {
+     "ok": true,
+     "why": "note mentions: scc"
+    },
+    "actionable": {
+     "ok": true,
+     "why": "names owner, action and timeframe"
+    },
+    "faithful": {
+     "ok": true,
+     "why": "every figure and name traces to the note"
+    }
+   },
+   "flags": []
+  },
+  {
+   "id": "N08",
+   "note": "Newsletter (~18k subscribers)\n- unsubscribe = login + 3 steps\n- consent proof only as monthly aggregate counts, no per-subscriber timestamp/source\n- DOI active",
+   "candidates": [
+    [
+     "Art. 7",
+     10.58
+    ],
+    [
+     "Art. 6(1)",
+     3.77
+    ],
+    [
+     "Art. 25(2)",
+     1.72
+    ]
+   ],
+   "draft": {
+    "title": "Conditions for consent: Newsletter (~18k subscribers)",
+    "article": "Art. 7",
+    "risk": "medium",
+    "evidence": "unsubscribe = login + 3 steps; consent proof only as monthly aggregate counts, no per-subscriber timestamp/source; DOI active",
+    "recommendation": "Marketing lead to keep per-person consent records and make withdrawal as easy as giving consent before the follow-up audit."
+   },
+   "judge": {
+    "citation": {
+     "ok": true,
+     "why": "note mentions: consent, unsubscribe"
+    },
+    "actionable": {
+     "ok": true,
+     "why": "names owner, action and timeframe"
+    },
+    "faithful": {
+     "ok": true,
+     "why": "every figure and name traces to the note"
+    }
+   },
+   "flags": []
+  },
+  {
+   "id": "N09",
+   "note": "DSAR log 2026 (privacy team)\n- 11 received, 3 answered after 6-9 wks\n- no extension notice to requesters\n- no deadline tracking in tool",
+   "candidates": [
+    [
+     "Art. 12(3)",
+     10.59
+    ],
+    [
+     "Art. 32",
+     2.32
+    ],
+    [
+     "Art. 35",
+     2.21
+    ]
+   ],
+   "draft": {
+    "title": "Time limit for answering data subject requests: DSAR log 2026 (privacy team)",
+    "article": "Art. 12(3)",
+    "risk": "medium",
+    "evidence": "11 received, 3 answered after 6-9 wks; no extension notice to requesters; no deadline tracking in tool",
+    "recommendation": "Privacy team to track each data subject request against the one-month deadline and send extension notices in time, evidenced before the follow-up audit."
+   },
+   "judge": {
+    "citation": {
+     "ok": true,
+     "why": "note mentions: request, dsar, answered"
+    },
+    "actionable": {
+     "ok": true,
+     "why": "names owner, action and timeframe"
+    },
+    "faithful": {
+     "ok": true,
+     "why": "every figure and name traces to the note"
+    }
+   },
+   "flags": []
+  },
+  {
+   "id": "N10",
+   "note": "Erasure requests (CRM + marketing DWH)\n- CRM deletion done within ~1 week\n- same customers still in marketing DWH + nightly backups restored to test env\n- no suppression list against re-import",
+   "candidates": [
+    [
+     "Art. 17",
+     10.24
+    ],
+    [
+     "Art. 12(3)",
+     5.84
+    ],
+    [
+     "Art. 5(1)(e)",
+     1.94
+    ]
+   ],
+   "draft": {
+    "title": "Right to erasure: Erasure requests (CRM + marketing DWH)",
+    "article": "Art. 17",
+    "risk": "medium",
+    "evidence": "CRM deletion done within ~1 week; same customers still in marketing DWH + nightly backups restored to test env; no suppression list against re-import",
+    "recommendation": "System owners to propagate erasure to every copy (backups, warehouses, processors) or suppress restored records, and evidence it before the follow-up audit."
+   },
+   "judge": {
+    "citation": {
+     "ok": true,
+     "why": "note mentions: erasure, suppression"
+    },
+    "actionable": {
+     "ok": true,
+     "why": "names owner, action and timeframe"
+    },
+    "faithful": {
+     "ok": true,
+     "why": "every figure and name traces to the note"
+    }
+   },
+   "flags": []
+  }
+ ]
+}

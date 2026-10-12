@@ -1,0 +1,13 @@
+{
+  "about": "Hand labels for the synthetic notes: the GDPR article a finding should cite and its risk level (rubric in pipeline.RISK_RUBRIC).",
+  "N01": {"article": "Art. 5(1)(e)", "risk": "medium"},
+  "N02": {"article": "Art. 35", "risk": "high"},
+  "N03": {"article": "Art. 28(3)", "risk": "high"},
+  "N04": {"article": "Art. 32", "risk": "high"},
+  "N05": {"article": "Art. 33", "risk": "high"},
+  "N06": {"article": "Art. 30", "risk": "low"},
+  "N07": {"article": "Art. 46", "risk": "high"},
+  "N08": {"article": "Art. 7", "risk": "medium"},
+  "N09": {"article": "Art. 12(3)", "risk": "medium"},
+  "N10": {"article": "Art. 17", "risk": "medium"}
+}

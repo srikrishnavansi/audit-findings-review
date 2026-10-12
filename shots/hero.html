@@ -1,0 +1,131 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Audit findings review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=block" rel="stylesheet">
+<style>
+  :root { --bg:#031b31; --el:#051f37; --card:#082641; --brand:#b3375b; --brand2:#d94a70; --white:#f3f1f0; --warm:#e1d9db;
+    --mid:#9a8d98; --blue:#d1def3; --line:rgba(225,217,219,.10); }
+  * { box-sizing:border-box; margin:0; }
+  html,body { width:1600px; height:920px; overflow:hidden; color:var(--warm);
+    background:linear-gradient(180deg,#0a2440 0%,var(--bg) 42%);
+    font-family:"DM Sans",system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  .grain { position:fixed; inset:0; pointer-events:none; opacity:.06; mix-blend-mode:screen; }
+  .wrap { position:relative; padding:58px 72px 0; height:100%; }
+  .pill { display:inline-flex; gap:10px; align-items:center; border:1px solid rgba(179,55,91,.55); color:var(--warm);
+    font:600 12.5px/1 "DM Sans",sans-serif; letter-spacing:.14em; padding:9px 14px; border-radius:999px; }
+  .pill i { width:7px; height:7px; border-radius:50%; background:var(--brand2); display:block; }
+  h1 { margin-top:22px; font-family:Outfit,sans-serif; font-weight:800; font-size:60px; line-height:1.02; letter-spacing:-.025em; color:var(--white); }
+  h1 span { color:var(--brand2); }
+  .rule { width:48px; height:2px; background:var(--brand); margin-top:18px; }
+  .sub { margin-top:14px; font-size:23px; font-weight:300; letter-spacing:.02em; color:var(--warm); }
+  .mono { font-family:ui-monospace,"SF Mono",Menlo,monospace; }
+
+  .stage { margin-top:30px; display:flex; gap:26px; height:494px; }
+  .left { width:430px; flex:none; display:flex; flex-direction:column; gap:16px; }
+  .lab { font:600 11.5px "DM Sans",sans-serif; letter-spacing:.14em; color:var(--mid); text-transform:uppercase; }
+  .lab b { color:var(--blue); font-weight:600; background:rgba(209,222,243,.10); padding:2px 6px; border-radius:4px; margin-left:4px; }
+  .note { background:var(--el); border:1px solid var(--line); border-radius:16px; padding:16px 20px 18px; }
+  .note pre { margin-top:10px; font:14.5px/1.6 ui-monospace,"SF Mono",Menlo,monospace; color:var(--white); white-space:pre-wrap; }
+  .route { padding:0 6px; font-size:15px; line-height:1.5; color:var(--warm); }
+  .route .ar { display:block; font:600 11.5px "DM Sans",sans-serif; letter-spacing:.14em; color:var(--brand2); margin-bottom:4px; }
+  .route .mono { font-size:13.5px; color:var(--white); }
+  .route .mono em { font-style:normal; color:var(--mid); }
+  .eval { background:var(--el); border:1px solid var(--line); border-radius:16px; padding:14px 20px 14px; flex:1; }
+  .eval table { width:100%; border-collapse:collapse; margin-top:8px; font-size:14.5px; }
+  .eval td { padding:5px 0; border-top:1px solid var(--line); }
+  .eval td:last-child { text-align:right; font:600 14px ui-monospace,"SF Mono",Menlo,monospace; color:var(--white); }
+  .eval tr.zero td { color:var(--white); } .eval tr.zero td:last-child { color:var(--brand2); }
+  .eval .cap { margin-top:8px; font-size:13px; color:var(--mid); line-height:1.4; }
+
+  .finding { flex:1; min-width:0; background:var(--card); border:1px solid rgba(225,217,219,.14); border-radius:20px; padding:20px 26px 18px;
+    box-shadow:0 30px 60px rgba(0,8,18,.45); }
+  .fh { display:flex; align-items:center; gap:10px; }
+  .badge { font:600 12.5px "DM Sans",sans-serif; padding:5px 10px; border-radius:999px; }
+  .b-art { background:rgba(209,222,243,.10); color:var(--blue); }
+  .b-high { background:var(--brand); color:#fff; letter-spacing:.08em; }
+  .fh .lab { margin-right:auto; }
+  .title { margin-top:12px; font-family:Outfit,sans-serif; font-weight:700; font-size:27px; letter-spacing:-.02em; color:var(--white); }
+  .grid { display:grid; grid-template-columns:150px 1fr; column-gap:16px; row-gap:10px; margin-top:14px; font-size:15.5px; line-height:1.45; }
+  .grid .lab { padding-top:3px; }
+  .grid .v { color:var(--warm); }
+  .grid .v.dr { color:var(--mid); }
+  .judge { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:16px; }
+  .j { border:1px solid var(--line); border-radius:12px; padding:10px 12px; font-size:13.5px; line-height:1.35; color:var(--mid); }
+  .j b { display:flex; align-items:center; gap:8px; color:var(--white); font-weight:600; font-size:14.5px; margin-bottom:3px; }
+  .j b span { font:700 10.5px "DM Sans",sans-serif; letter-spacing:.1em; color:var(--blue); background:rgba(209,222,243,.12); padding:3px 6px; border-radius:4px; }
+  .sign { margin-top:16px; padding-top:14px; border-top:1px solid var(--line); }
+  .sign .who { display:flex; align-items:center; gap:10px; font-size:14.5px; color:var(--warm); }
+  .sign .who .act { font:700 11.5px "DM Sans",sans-serif; letter-spacing:.12em; background:var(--brand); color:#fff; padding:4px 8px; border-radius:5px; }
+  .sign .who q { color:var(--mid); }
+  .sign .final { margin-top:10px; display:grid; grid-template-columns:150px 1fr; column-gap:16px; font-size:15.5px; line-height:1.45; color:var(--white); }
+  .sign .final .lab { color:var(--brand2); padding-top:3px; }
+  .log { margin-top:12px; font:12px/1.5 ui-monospace,"SF Mono",Menlo,monospace; color:var(--mid); overflow-wrap:anywhere; }
+  .log b { color:var(--warm); font-weight:500; }
+
+  .trail { position:absolute; left:72px; right:72px; bottom:80px; display:flex; align-items:center; gap:10px; font:500 13.5px ui-monospace,"SF Mono",Menlo,monospace; }
+  .chip { padding:9px 12px; border-radius:10px; background:var(--el); border:1px solid var(--line); white-space:nowrap; color:var(--white); }
+  .chip small { font-weight:400; color:var(--mid); margin-left:6px; font-size:12.5px; }
+  .chip.r { border-color:rgba(179,55,91,.6); }
+  .arrow { color:var(--brand2); }
+  .foot { position:absolute; left:72px; right:72px; bottom:34px; display:flex; justify-content:space-between; font-size:14.5px; color:var(--mid); }
+  .foot span:last-child { font-family:ui-monospace,"SF Mono",Menlo,monospace; color:var(--warm); font-size:14px; }
+</style></head>
+<body>
+<svg class="grain" width="1600" height="920"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
+<div class="wrap">
+  <span class="pill"><i></i>GDPR AUDIT FINDINGS · DRAFT, JUDGE, SIGN-OFF</span>
+  <h1>Auditor shorthand in, <span>signed finding out.</span></h1>
+  <p class="sub">Every draft cites a retrieved GDPR article, is checked by a judge, and waits for a named reviewer.</p>
+
+  <div class="stage">
+    <div class="left">
+      <div class="note">
+        <div class="lab">Raw note · N04 <b>SYNTHETIC</b></div>
+<pre>HR system incl. sick-leave data
+- no audit trail for admin actions since migration (01/2026)
+- 3 shared admin accts (hradmin1-3), no MFA
+- last access recert. Q2/2025</pre>
+      </div>
+      <div class="route"><span class="ar">BM25 over 15 GDPR articles →</span><span class="mono">Art. 32 <em>8.8</em> · Art. 15 <em>3.52</em> · Art. 12(3) <em>2.54</em></span></div>
+      <div class="eval">
+        <div class="lab">Eval · rules mode · 10 synthetic notes</div>
+        <table>
+          <tr><td>article accuracy</td><td>10/10</td></tr>
+          <tr><td>judge agreement, all cases</td><td>35/50</td></tr>
+          <tr><td>citation: near-miss article</td><td>5/10</td></tr>
+          <tr class="zero"><td>faithful: invented claim</td><td>0/10</td></tr>
+        </table>
+        <p class="cap">The offline judge misses invented claims written in plain words. That row is what the LLM judge is for.</p>
+      </div>
+    </div>
+
+    <div class="finding">
+      <div class="fh"><span class="lab">Draft finding · N04</span><span class="badge b-art">Art. 32 Security of processing</span><span class="badge b-high">HIGH</span></div>
+      <div class="title">Security of processing: HR system incl. sick-leave data</div>
+      <div class="grid">
+        <span class="lab">Evidence</span><span class="v">no audit trail for admin actions since migration (01/2026); 3 shared admin accts (hradmin1-3), no MFA; last access recert. Q2/2025</span>
+        <span class="lab">Recommendation, as drafted</span><span class="v dr">IT security to implement and evidence the missing technical control (logging, access control or encryption) for the affected system before the follow-up audit.</span>
+      </div>
+      <div class="judge">
+        <div class="j"><b><span>PASS</span>Citation</b>note mentions: admin, mfa</div>
+        <div class="j"><b><span>PASS</span>Actionable</b>names owner, action and timeframe</div>
+        <div class="j"><b><span>PASS</span>No invented facts</b>every figure and name traces to the note</div>
+      </div>
+      <div class="sign">
+        <div class="who"><span class="act">EDITED</span><span>by Lena Berger · 2026-10-11 20:23 UTC</span><q>made the fix specific to this system</q></div>
+        <div class="final"><span class="lab">Signed recommendation</span><span>IT security to enable audit logging for admin actions, replace the 3 shared admin accounts with personal ones and enforce MFA before the follow-up audit.</span></div>
+        <div class="log">out/decisions.jsonl <b>{"at": "2026-10-11T20:23:43Z", "finding_id": "N04", "reviewer": "Lena Berger", "action": "edit", "note": "made the fix specific to this system", "mode": "rules (offline, deterministic)", "judge_flags": [], "draft": {...}, "final": {...}}</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="trail">
+    <span class="chip">retrieve<small>BM25</small></span><span class="arrow">→</span>
+    <span class="chip">draft<small>cites a retrieved article</small></span><span class="arrow">→</span>
+    <span class="chip">judge<small>3 of 3 pass</small></span><span class="arrow">→</span>
+    <span class="chip r">named reviewer<small>approve, edit, reject</small></span><span class="arrow">→</span>
+    <span class="chip">out/decisions.jsonl<small>one line per decision</small></span>
+  </div>
+  <div class="foot"><span>Python · LangGraph retrieve, draft, judge · FastAPI review screen on 127.0.0.1 · 6 tests · runs offline, no key</span><span>github.com/srikrishnavansi/audit-findings-review</span></div>
+</div>
+</body></html>

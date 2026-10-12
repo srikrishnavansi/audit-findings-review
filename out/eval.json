@@ -1,0 +1,453 @@
+{
+ "summary": {
+  "mode": "rules (offline, deterministic)",
+  "notes": 10,
+  "article_correct": 10,
+  "risk_correct": 10,
+  "judge_agree": 35,
+  "judge_cases": 50,
+  "by_kind": {
+   "real draft": 10,
+   "near-miss article": 5,
+   "invented figure": 10,
+   "invented claim": 0,
+   "vague recommendation": 10
+  },
+  "real_drafts_flagged": 0,
+  "at": "2026-10-11 20:07 UTC"
+ },
+ "rows": [
+  {
+   "id": "N01",
+   "article_expected": "Art. 5(1)(e)",
+   "article": "Art. 5(1)(e)",
+   "risk_expected": "medium",
+   "risk": "medium",
+   "flags": []
+  },
+  {
+   "id": "N02",
+   "article_expected": "Art. 35",
+   "article": "Art. 35",
+   "risk_expected": "high",
+   "risk": "high",
+   "flags": []
+  },
+  {
+   "id": "N03",
+   "article_expected": "Art. 28(3)",
+   "article": "Art. 28(3)",
+   "risk_expected": "high",
+   "risk": "high",
+   "flags": []
+  },
+  {
+   "id": "N04",
+   "article_expected": "Art. 32",
+   "article": "Art. 32",
+   "risk_expected": "high",
+   "risk": "high",
+   "flags": []
+  },
+  {
+   "id": "N05",
+   "article_expected": "Art. 33",
+   "article": "Art. 33",
+   "risk_expected": "high",
+   "risk": "high",
+   "flags": []
+  },
+  {
+   "id": "N06",
+   "article_expected": "Art. 30",
+   "article": "Art. 30",
+   "risk_expected": "low",
+   "risk": "low",
+   "flags": []
+  },
+  {
+   "id": "N07",
+   "article_expected": "Art. 46",
+   "article": "Art. 46",
+   "risk_expected": "high",
+   "risk": "high",
+   "flags": []
+  },
+  {
+   "id": "N08",
+   "article_expected": "Art. 7",
+   "article": "Art. 7",
+   "risk_expected": "medium",
+   "risk": "medium",
+   "flags": []
+  },
+  {
+   "id": "N09",
+   "article_expected": "Art. 12(3)",
+   "article": "Art. 12(3)",
+   "risk_expected": "medium",
+   "risk": "medium",
+   "flags": []
+  },
+  {
+   "id": "N10",
+   "article_expected": "Art. 17",
+   "article": "Art. 17",
+   "risk_expected": "medium",
+   "risk": "medium",
+   "flags": []
+  }
+ ],
+ "cases": [
+  {
+   "id": "N01",
+   "kind": "real draft",
+   "check": "citation",
+   "expected_ok": true,
+   "judge_ok": true
+  },
+  {
+   "id": "N01",
+   "kind": "near-miss article",
+   "check": "citation",
+   "expected_ok": false,
+   "judge_ok": true
+  },
+  {
+   "id": "N01",
+   "kind": "invented figure",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N01",
+   "kind": "invented claim",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": true
+  },
+  {
+   "id": "N01",
+   "kind": "vague recommendation",
+   "check": "actionable",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N02",
+   "kind": "real draft",
+   "check": "citation",
+   "expected_ok": true,
+   "judge_ok": true
+  },
+  {
+   "id": "N02",
+   "kind": "near-miss article",
+   "check": "citation",
+   "expected_ok": false,
+   "judge_ok": true
+  },
+  {
+   "id": "N02",
+   "kind": "invented figure",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N02",
+   "kind": "invented claim",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": true
+  },
+  {
+   "id": "N02",
+   "kind": "vague recommendation",
+   "check": "actionable",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N03",
+   "kind": "real draft",
+   "check": "citation",
+   "expected_ok": true,
+   "judge_ok": true
+  },
+  {
+   "id": "N03",
+   "kind": "near-miss article",
+   "check": "citation",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N03",
+   "kind": "invented figure",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N03",
+   "kind": "invented claim",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": true
+  },
+  {
+   "id": "N03",
+   "kind": "vague recommendation",
+   "check": "actionable",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N04",
+   "kind": "real draft",
+   "check": "citation",
+   "expected_ok": true,
+   "judge_ok": true
+  },
+  {
+   "id": "N04",
+   "kind": "near-miss article",
+   "check": "citation",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N04",
+   "kind": "invented figure",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N04",
+   "kind": "invented claim",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": true
+  },
+  {
+   "id": "N04",
+   "kind": "vague recommendation",
+   "check": "actionable",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N05",
+   "kind": "real draft",
+   "check": "citation",
+   "expected_ok": true,
+   "judge_ok": true
+  },
+  {
+   "id": "N05",
+   "kind": "near-miss article",
+   "check": "citation",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N05",
+   "kind": "invented figure",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N05",
+   "kind": "invented claim",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": true
+  },
+  {
+   "id": "N05",
+   "kind": "vague recommendation",
+   "check": "actionable",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N06",
+   "kind": "real draft",
+   "check": "citation",
+   "expected_ok": true,
+   "judge_ok": true
+  },
+  {
+   "id": "N06",
+   "kind": "near-miss article",
+   "check": "citation",
+   "expected_ok": false,
+   "judge_ok": true
+  },
+  {
+   "id": "N06",
+   "kind": "invented figure",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N06",
+   "kind": "invented claim",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": true
+  },
+  {
+   "id": "N06",
+   "kind": "vague recommendation",
+   "check": "actionable",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N07",
+   "kind": "real draft",
+   "check": "citation",
+   "expected_ok": true,
+   "judge_ok": true
+  },
+  {
+   "id": "N07",
+   "kind": "near-miss article",
+   "check": "citation",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N07",
+   "kind": "invented figure",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N07",
+   "kind": "invented claim",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": true
+  },
+  {
+   "id": "N07",
+   "kind": "vague recommendation",
+   "check": "actionable",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N08",
+   "kind": "real draft",
+   "check": "citation",
+   "expected_ok": true,
+   "judge_ok": true
+  },
+  {
+   "id": "N08",
+   "kind": "near-miss article",
+   "check": "citation",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N08",
+   "kind": "invented figure",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N08",
+   "kind": "invented claim",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": true
+  },
+  {
+   "id": "N08",
+   "kind": "vague recommendation",
+   "check": "actionable",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N09",
+   "kind": "real draft",
+   "check": "citation",
+   "expected_ok": true,
+   "judge_ok": true
+  },
+  {
+   "id": "N09",
+   "kind": "near-miss article",
+   "check": "citation",
+   "expected_ok": false,
+   "judge_ok": true
+  },
+  {
+   "id": "N09",
+   "kind": "invented figure",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N09",
+   "kind": "invented claim",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": true
+  },
+  {
+   "id": "N09",
+   "kind": "vague recommendation",
+   "check": "actionable",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N10",
+   "kind": "real draft",
+   "check": "citation",
+   "expected_ok": true,
+   "judge_ok": true
+  },
+  {
+   "id": "N10",
+   "kind": "near-miss article",
+   "check": "citation",
+   "expected_ok": false,
+   "judge_ok": true
+  },
+  {
+   "id": "N10",
+   "kind": "invented figure",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": false
+  },
+  {
+   "id": "N10",
+   "kind": "invented claim",
+   "check": "faithful",
+   "expected_ok": false,
+   "judge_ok": true
+  },
+  {
+   "id": "N10",
+   "kind": "vague recommendation",
+   "check": "actionable",
+   "expected_ok": false,
+   "judge_ok": false
+  }
+ ]
+}
